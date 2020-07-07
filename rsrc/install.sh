@@ -29,5 +29,5 @@ cd ~/.rsrc/zsh
 cd ../..
 
 echo 'remember:'
-echo '$ pip install flake8'
+echo '$ pip3 install flake8'
 echo '$ vim +PlugInstall +qall'
