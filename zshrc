@@ -132,6 +132,7 @@ export REPORTTIME=5
 alias sl=ls
 
 # Disable that godforsaken bell when tab-completing.
+unsetopt BEEP
 setopt no_list_beep
 
 # Auto-complete SSH hosts from ~/.config/hosts.

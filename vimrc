@@ -58,13 +58,17 @@ call plug#end()
 let mapleader = '-'
 noremap <leader>ev :split ~/.vimrc<cr>
 noremap <leader>sv :source ~/.vimrc<cr>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " ---------- General Text Editing / Style ----------
 set number
 set relativenumber
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set shiftwidth=4
+set softtabstop=4
+
+" ---------- Miscellaneous Settings ---------
+set noerrorbells visualbell t_vb=
 
 
 " ---------- Language-specific Syntax Highlighting ----------
@@ -330,7 +334,19 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
+" Set status line to show useful info:
+set laststatus=2
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through fileAdd (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
