@@ -24,4 +24,5 @@ export RAN_MY_PROFILE=YEP
 
 
 # aliases
-alias tmux_default=tmux new-session -A s default_session
+alias tmux="tmux -2"
+alias tmux_default="tmux new-session -A s default_session"
