@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-dotfiles=$HOME/.dotfiles
+dotfiles=$HOME/dotfiles
 for fn in $( ls $dotfiles ) ; do
     if [ "${fn:0:1}" != "." ] && [ "${fn##*.}" != "orig" ] ; then
         src=$dotfiles/$fn
