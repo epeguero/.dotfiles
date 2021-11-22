@@ -1,3 +1,5 @@
+Run `rsrc/install.sh` to install
+
 Installation Dependencies:
 * `pip install --user flake8`
     * required by vim python linter
