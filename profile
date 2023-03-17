@@ -1,3 +1,6 @@
+# Start in home directory (for WSL)
+cd ~/
+
 # PATH extensions
 export PATH=~/.local/bin:$PATH
 

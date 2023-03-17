@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-dotfiles=$HOME/dotfiles
+dotfiles=$HOME/.dotfiles
 for fn in $( ls $dotfiles ) ; do
     if [ "${fn:0:1}" != "." ] && [ "${fn##*.}" != "orig" ] ; then
         src=$dotfiles/$fn
@@ -29,5 +29,6 @@ cd ~/.rsrc/zsh
 cd ../..
 
 echo 'remember:'
+echo 'chsh -s $(which zsh)'
 echo '$ pip3 install flake8'
 echo '$ vim +PlugInstall +qall'
